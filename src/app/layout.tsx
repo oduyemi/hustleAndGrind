@@ -1,6 +1,5 @@
 import "./globals.css";
 import "animate.css";
-import { Header } from "@/components/Header";
 import ClientSideLayout from "@/components/ClientSideLayout"; 
 
 export const metadata = {
