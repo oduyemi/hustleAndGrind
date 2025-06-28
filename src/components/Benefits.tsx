@@ -83,7 +83,7 @@ export const Benefits: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-20">
           <p className="uppercase text-xs tracking-widest text-zinc-500 mb-3 animate__animated animate__fadeInDown">
-            What's in it for my team?
+            What&apos;s in it for my team?
           </p>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight  animate__animated animate__fadeInUp">
             Program Focus & Benefits

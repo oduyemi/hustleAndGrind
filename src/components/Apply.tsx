@@ -91,7 +91,7 @@ export const Application: React.FC = () => {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-bold mb-16"
           >
-            What You'll Gain
+            What You&apos;ll Gain
           </motion.h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 text-left">
