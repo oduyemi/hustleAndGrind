@@ -15,10 +15,10 @@ export const Application: React.FC = () => {
           viewport={{ once: true }}
           className="max-w-5xl mx-auto p-10 bg-white border border-zinc-800 rounded-3xl shadow-2xl animate__animated animate__fadeInUp"
         >
-          <p className="text-sm uppercase tracking-widest text-white/60 mb-3">
+          <p className="text-sm uppercase tracking-widest text-black/60 mb-3">
             Apply Now
           </p>
-          <h1 className="text-4xl lg:text-5xl font-extrabold text-white mb-8 leading-tight tracking-tight">
+          <h1 className="text-4xl lg:text-5xl font-extrabold text-zinc-800 mb-8 leading-tight tracking-tight">
             Hustle & Grind Application
           </h1>
           <div className="w-full h-[700px] mx-auto rounded-xl overflow-hidden">
