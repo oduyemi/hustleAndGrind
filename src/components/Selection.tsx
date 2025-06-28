@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Rocket, Lightbulb, Handshake } from "lucide-react";
 import "animate.css";
 
 export const Selection: React.FC = () => {
