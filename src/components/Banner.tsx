@@ -115,7 +115,15 @@ export const Banner: React.FC = () => {
               viewport={{ once: true }}
               className="mt-10"
             >
-              <Button className="rounded-full px-8 py-4 bg-white text-black font-semibold tracking-wide hover:scale-105 hover:shadow-[0_10px_25px_-5px_rgba(255,255,255,0.2)] transition-all duration-300 group relative overflow-hidden">
+              <Button
+                onClick={() =>
+                  window.open("https://tinyurl.com/hustleandgrind-application", "_blank")
+                }
+                className="rounded-full px-8 py-4 bg-white text-black 
+                  font-semibold tracking-wide hover:scale-105 
+                  hover:shadow-[0_10px_25px_-5px_rgba(255,255,255,0.2)] 
+                  transition-all duration-300 group relative overflow-hidden"
+              >
                 <span className="relative z-10 transition-transform group-hover:translate-x-1">
                   Apply Now →
                 </span>
