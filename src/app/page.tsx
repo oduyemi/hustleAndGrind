@@ -13,10 +13,10 @@ export default function Home() {
       <Benefits />
       </div>
       <Selection />
+      <Core />
       <div>
         <Application />
       </div>
-      <Core />
     </div>
   );
 }
