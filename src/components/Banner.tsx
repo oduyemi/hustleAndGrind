@@ -44,9 +44,8 @@ export const Banner: React.FC = () => {
 
   return (
     <section className="relative w-full text-white px-6 md:px-12 lg:px-20 py-24 sm:py-32 md:py-40 overflow-hidden isolate border-b border-white/10 bg-black">
-      {/* Background FX */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] bg-repeat opacity-5 mix-blend-overlay" />
+        <div className="absolute inset-0 bg-[url('/images/grid-pattern.jpg')] bg-repeat opacity-5 mix-blend-overlay" />
         <div className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-fuchsia-500/10 blur-[120px] rounded-full" />
         <div className="absolute bottom-0 -right-40 w-[450px] h-[450px] bg-blue-500/10 blur-[100px] rounded-full" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-white/5 rounded-full blur-[180px] opacity-5 animate-pulse" />
