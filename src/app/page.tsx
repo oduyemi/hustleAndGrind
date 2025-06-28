@@ -1,6 +1,8 @@
 import { Application } from "@/components/Apply";
 import { Banner } from "@/components/Banner";
 import { Benefits } from "@/components/Benefits";
+import { Core } from "@/components/ProgramCore";
+import { Selection } from "@/components/Selection";
 
 
 export default function Home() {
@@ -10,9 +12,11 @@ export default function Home() {
       <div className="mt-2">
       <Benefits />
       </div>
+      <Selection />
       <div>
         <Application />
       </div>
+      <Core />
     </div>
   );
 }
