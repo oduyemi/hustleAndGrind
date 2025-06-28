@@ -46,7 +46,7 @@ export const Application: React.FC = () => {
             <li>Willingness to learn, adapt, and hustle</li>
           </ul>
           <p className="mt-6 text-sm text-zinc-400 italic">
-            "Wisdom is like a baobab tree; no one individual can embrace it." <br/> — Ghanaian Proverb
+            Wisdom is like a baobab tree; no one individual can embrace it. <br/> — Ghanaian Proverb
           </p>
         </motion.div>
       </section>
