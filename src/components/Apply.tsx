@@ -26,7 +26,7 @@ export const Application: React.FC = () => {
               src="https://tally.so/r/3jrBQY?transparentBackground=1"
               loading="lazy"
               className="w-full h-full border-0"
-              allowTransparency
+              // allowTransparency
               title="Hustle & Grind Application"
             ></iframe>
           </div>
