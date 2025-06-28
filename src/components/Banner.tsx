@@ -43,37 +43,37 @@ export const Banner: React.FC = () => {
   const slide = slides[currentSlide];
 
   return (
-    <section className="relative w-full text-white px-4 sm:px-8 md:px-12 lg:px-20 py-24 sm:py-28 md:py-32 lg:py-40 overflow-hidden isolate border-b border-white/10">
-      {/* Background Effects */}
+    <section className="relative w-full text-white px-6 md:px-12 lg:px-20 py-24 sm:py-32 md:py-40 overflow-hidden isolate border-b border-white/10 bg-black">
+      {/* Background FX */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] bg-repeat opacity-5 mix-blend-overlay" />
-        <div className="absolute -top-32 -left-32 w-[450px] h-[450px] bg-purple-500/10 blur-[120px] rounded-full" />
-        <div className="absolute bottom-0 -right-40 w-[400px] h-[400px] bg-blue-500/10 blur-[100px] rounded-full" />
+        <div className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-fuchsia-500/10 blur-[120px] rounded-full" />
+        <div className="absolute bottom-0 -right-40 w-[450px] h-[450px] bg-blue-500/10 blur-[100px] rounded-full" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-white/5 rounded-full blur-[180px] opacity-5 animate-pulse" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-14 lg:gap-20">
-        {/* Left Content */}
-        <div className="flex-1 text-center lg:text-left space-y-6">
-          <Badge className="bg-white/10 text-white/90 px-4 py-1.5 text-sm uppercase tracking-wide font-semibold rounded-full border border-white/20 backdrop-blur-md shadow-md">
+        {/* LEFT: Text */}
+        <div className="flex-1 text-center lg:text-left space-y-8">
+          <Badge className="bg-white/10 text-white/90 px-4 py-1.5 text-sm uppercase tracking-wide font-semibold rounded-full border border-white/20 backdrop-blur-md shadow-none">
             Now Accepting
           </Badge>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: [0.42, 0, 0.58, 1] }}
             className="space-y-5"
           >
             <h1
-              className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight transition-opacity duration-500 ${
+              className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight transition-opacity duration-500 ${
                 animating ? "opacity-0" : "opacity-100"
               }`}
             >
               {slide.title}
             </h1>
             <p
-              className={`text-sm sm:text-base md:text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0 transition-opacity duration-500 ${
+              className={`text-base md:text-lg text-zinc-400 max-w-xl mx-auto lg:mx-0 transition-opacity duration-500 ${
                 animating ? "opacity-0" : "opacity-100"
               }`}
             >
@@ -82,7 +82,7 @@ export const Banner: React.FC = () => {
           </motion.div>
 
           {/* Indicators */}
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6 text-sm text-gray-400">
+          <div className="mt-6 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6 text-sm text-zinc-500">
             {[
               { icon: <Check />, text: "10 Elite Teams Only" },
               { icon: <Clock />, text: "4-Week Intensive" },
@@ -115,17 +115,16 @@ export const Banner: React.FC = () => {
               viewport={{ once: true }}
               className="mt-10"
             >
-              <Button className="rounded-full px-8 py-4 bg-gradient-to-r from-white to-gray-100 text-black font-semibold hover:scale-105 hover:shadow-2xl transition-all duration-300 group relative overflow-hidden">
-                <span className="z-10 relative">&emsp;Apply Now&emsp;</span>
-                <span className="absolute right-4 z-0 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300">
-                  →
+              <Button className="rounded-full px-8 py-4 bg-white text-black font-semibold tracking-wide hover:scale-105 hover:shadow-[0_10px_25px_-5px_rgba(255,255,255,0.2)] transition-all duration-300 group relative overflow-hidden">
+                <span className="relative z-10 transition-transform group-hover:translate-x-1">
+                  Apply Now →
                 </span>
               </Button>
             </motion.div>
           )}
         </div>
 
-        {/* Right Image */}
+        {/* RIGHT: Hero Image */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -137,7 +136,7 @@ export const Banner: React.FC = () => {
             <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] bg-[length:40px_40px] opacity-5 mix-blend-overlay" />
           </div>
           <Image
-            src="/images/hero.png"
+            src="/images/hero1.png"
             alt="Hero"
             width={600}
             height={400}
