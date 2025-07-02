@@ -10,14 +10,14 @@ export default function Home() {
   return (
     <div>
       <Banner />
+      <div>
+        <VideoEmbed />
+      </div>
       <div className="mt-2">
       <Benefits />
       </div>
       <Selection />
       <Core />
-      <div>
-        <VideoEmbed />
-      </div>
       <div>
         <Application />
       </div>
