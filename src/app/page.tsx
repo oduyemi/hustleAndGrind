@@ -3,6 +3,7 @@ import { Banner } from "@/components/Banner";
 import { Benefits } from "@/components/Benefits";
 import { Core } from "@/components/ProgramCore";
 import { Selection } from "@/components/Selection";
+import { VideoEmbed } from "@/components/VideoEmbed";
 
 
 export default function Home() {
@@ -14,6 +15,9 @@ export default function Home() {
       </div>
       <Selection />
       <Core />
+      <div>
+        <VideoEmbed />
+      </div>
       <div>
         <Application />
       </div>
