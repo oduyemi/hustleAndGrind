@@ -11,10 +11,10 @@ const slides = [
   {
     title: "Accelerate What You've Started.",
     description:
-      "Already building. Already earning. Now it's time to refine your product, grow faster, and raise smarter. Hustle & Grind is for serious founders with serious traction.",
+      "Already building. Already earning. Now it's time to refine your product, grow faster, and raise smarter. Hustle & Grind is for serious CEOs with serious traction.",
   },
   {
-    title: "For Founders Who Mean Business.",
+    title: "For CEOs Who Mean Business.",
     description:
       "Post-revenue? Pre-seed? You're in the right place. Hustle & Grind delivers a month of intensive growth, mentorship, and fundraising strategy in Lagos.",
   },
@@ -83,9 +83,9 @@ export const Banner: React.FC = () => {
           {/* Indicators */}
           <div className="mt-6 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6 text-sm text-zinc-500">
             {[
-              { icon: <Check />, text: "10 Elite Teams Only" },
+              { icon: <Check />, text: "10 CEOs Only" },
               { icon: <Clock />, text: "4-Week Intensive" },
-              { icon: <TrendingUp />, text: "VC-Backed Curriculum" },
+              { icon: <TrendingUp />, text: "Next-level for companies" },
             ].map(({ icon, text }, i) => (
               <motion.div
                 key={text}

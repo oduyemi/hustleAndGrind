@@ -19,7 +19,7 @@ export const Selection: React.FC = () => {
         >
           <h2 className="text-3xl font-bold mb-6">Selection Criteria</h2>
           <ul className="space-y-4 text-lg text-zinc-700 list-disc list-inside leading-relaxed">
-            <li>Post-revenue tech companies with traction and growth potential</li>
+            <li>Post-revenue companies with traction and growth potential</li>
             <li>Strong team and vision</li>
             <li>Willingness to learn, adapt, and hustle</li>
           </ul>

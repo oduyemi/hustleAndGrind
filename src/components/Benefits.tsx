@@ -8,9 +8,9 @@ import "animate.css";
 export const Benefits: React.FC = () => {
   const benefits = [
     {
-      title: "Intensive Mentorship",
+      title: "Scale with Confidence",
       desc:
-        "Get expert guidance from seasoned operators to accelerate your growth, navigate challenges, and fine-tune your startup’s trajectory.",
+        "Tap into expert insight to de-risk decisions, refine your scale-up playbook, and push past growth ceilings with clarity and speed.",
       image: "images/icons/a.png",
     },
     {
@@ -44,9 +44,9 @@ export const Benefits: React.FC = () => {
       image: "images/icons/f.png",
     },
     {
-      title: "Founder Community",
+      title: "CEO Community",
       desc:
-        "Collaborate with a driven cohort of fellow founders. Share ideas, build connections, and grow together.",
+        "Collaborate with a driven cohort of fellow CEOs. Share ideas, build connections, and grow together.",
       image: "images/icons/g.png",
     },
     {

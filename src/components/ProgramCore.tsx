@@ -16,13 +16,13 @@ export const Core: React.FC = () => {
       icon: Lightbulb,
       title: "Expert Guidance",
       description:
-        "Work with seasoned founders and operators with proven track records.",
+        "Work with seasoned CEOs and operators with proven track records.",
     },
     {
       icon: Handshake,
       title: "Supportive Network",
       description:
-        "Join a vibrant community of ambitious founders, mentors, and investors.",
+        "Join a vibrant community of ambitious CEOs, mentors, and investors.",
     },
   ];
 
