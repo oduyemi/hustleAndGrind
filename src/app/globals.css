@@ -4,122 +4,106 @@
 @import url('https://fonts.cdnfonts.com/css/league-spartan');
 @import "tw-animate-css";
 
+/* -----------------------
+   Theme variables (light default)
+   ----------------------- */
+:root{
+  --bg: #ffffff;
+  --text: #000000;
+  --muted: #6b7280;
+  --benefit-bg: #ffffff;
+  --benefit-text: #000000;
+  --benefit-hover: #e5e7eb;
+  --application-border: #000000;
+  --application-bg: #ffffff;
+  --counter-bg: rgba(255,255,255,0.5);
+  --counter-text: #000000;
+  --primary: #6b46c1;
+}
 
+/* Dark theme (toggle the class "dark-theme" on <html>) */
+.dark-theme {
+  --bg: #0b0b0b;
+  --text: #ffffff;
+  --muted: #9ca3af;
+  --benefit-bg: #000000;
+  --benefit-text: #ffffff;
+  --benefit-hover: #333333;
+  --application-border: #ffffff;
+  --application-bg: #000000;
+  --counter-bg: rgba(0,0,0,0.5);
+  --counter-text: #ffffff;
+  --primary: #8b5cf6;
+}
 
-/* *{
-  margin: 0%;
-  padding: 0%;
-  box-sizing: border-box;
-} */
-
-body, html {
-  background: #000;
-  color: #fff;
+/* Base */
+html, body {
+  height: 100%;
   font-family: "League Spartan", sans-serif;
   overflow-x: hidden;
-
+  margin: 0;
+  transition: background .25s, color .25s;
+  background: var(--bg);
+  color: var(--text);
 }
 
-.moveright{
-  margin-left: 80px;
-}
-
-
-
+/* =====================
+   Benefits Section (use variables)
+   ===================== */
 .benefits .benefits-item {
-  background-color: #000;
-  transition: 0.5s;
+  background: var(--benefit-bg);
+  color: var(--benefit-text);
+  transition: background .25s, color .25s, border-color .25s;
 }
 
 .benefits .benefits-item:hover {
-    background: #ccc!important;
-    border-color: #ccc !important;
+  background: var(--benefit-hover);
+  border-color: var(--benefit-hover);
 }
 
-.benefits .benefits-item .benefits-content p,
-.benefits .benefits-item .benefits-content h3 {
-  color:#fff !important
+/* =====================
+   Application Section
+   ===================== */
+.application .application-item {
+  border: 1px solid var(--application-border);
+  background: var(--application-bg);
+  color: var(--text);
+  transition: background .25s, color .25s, border-color .25s;
 }
 
-.benefits .benefits-item:hover .benefits-content p,
-.benefits .benefits-item:hover .benefits-content h3 {
-    color: #000 !important;
-    transition: 0.5s;
-}
-
-.benefits .benefits-item:hover .benefits-content a.btn {
-    background: #fff;
-    color: #FF4F9D !important;
-}
-
-.benefits .benefits-item:hover .benefits-content a.btn:hover {
-    color: #fff !important;
-}
-
-.benefits .benefits-item .benefits-img {
-    overflow: hidden;
-}
-
-.benefits .benefits-item .benefits-img img {
-    transition: 0.5s;
-}
-
-.benefits .benefits-item .benefits-img img:hover {
-    transform: scale(1.3);
-}
-
-
-.application {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.application .application-form {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, .4));
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.application .application-time {
-    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, .2));
-    object-fit: cover;
-    border-radius: 10px;
+/* =====================
+   Counter Section
+   ===================== */
+.counter-section .counter-item {
+  text-align: center;
+  background: var(--counter-bg);
+  border-radius: 0 25% 0 25%;
+  color: var(--counter-text);
+  transition: background .25s, color .25s;
 }
 
 .counter-section .counter-item .counter-content {
-    position: relative;
-    margin-bottom: 60px;
-    background-image: linear-gradient(rgba(252, 152, 195, 0.3), rgba(255, 255, 255, 0.3), rgba(136, 76, 210, 0.3));
-    border-radius: 10px;
-    z-index: 9;
-}
-
-.counter-section .counter-item {
-    text-align: center;
-    background: rgba(255, 255, 255, .5) !important;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
-    object-fit: cover;
-    border-radius: 0 25% 0 25%;
-}
-
-.counter-section .counter-item .counter-content .svg-img {
-    position: absolute;
-    bottom: 0; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    margin-bottom: -50px; 
-    margin-left: -45px; 
-    transform: rotate(180deg);
+  position: relative;
+  margin-bottom: 60px;
+  background-image: linear-gradient(
+    rgba(252, 152, 195, 0.3),
+    rgba(255, 255, 255, 0.3),
+    rgba(136, 76, 210, 0.3)
+  );
+  border-radius: 10px;
+  z-index: 9;
 }
 
 .counter-section .counter-item .counter-quantity {
-    width: 110px;
-    height: 110px;
-    border-radius: 55px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--bs-primary);
+  width: 110px;
+  height: 110px;
+  border-radius: 55px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary);
+  color: white;
 }
+
+/* Utilities */
+a { color: inherit; text-decoration: none; }

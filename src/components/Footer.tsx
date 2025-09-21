@@ -7,10 +7,11 @@ import "animate.css";
 export const Footer: React.FC = () => {
   return (
     <motion.footer
-      className="w-full text-white py-6 flex flex-col items-center justify-center animate__animated animate__fadeInUp"
+      className="w-full py-6 flex flex-col items-center justify-center animate__animated animate__fadeInUp"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3, duration: 0.6 }}
+      style={{ background: "var(--bg)", color: "var(--text)" }}
     >
       <div className="flex items-center space-x-2 text-sm sm:text-base">
         <Heart size={16} className="text-red-500 animate-pulse" />
