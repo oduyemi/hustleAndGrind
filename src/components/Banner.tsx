@@ -1,4 +1,3 @@
-// eslint-disable-line @typescript-eslint/no-unused-vars
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
@@ -33,6 +32,7 @@ const slides = [
 
 export const Banner: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  // eslint-disable-next-line
   const [animating, setAnimating] = useState(false);
 
   const { theme, systemTheme } = useTheme();
