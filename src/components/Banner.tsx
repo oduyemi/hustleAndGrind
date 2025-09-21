@@ -1,5 +1,5 @@
+// eslint-disable-line @typescript-eslint/no-unused-vars
 "use client";
-
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";

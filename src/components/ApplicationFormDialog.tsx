@@ -20,26 +20,28 @@ export default function ApplicationFormDialog() {
   });
   const [error, setError] = useState("");
 
-  const handleChange = (e: any) => {
-    const { name, value, files } = e.target;
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    ) => {
+    const { name, value, files } = e.target as HTMLInputElement;
     setForm((prev) => ({
-      ...prev,
-      [name]: files ? files[0] : value,
+        ...prev,
+        [name]: files ? files[0] : value,
     }));
-  };
+    };
 
-  const handleSubmit = (e: any) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (parseInt(form.annualRevenue || "0") < 50000) {
-      setError("We are looking for startups with at least $50,000 annual revenue.");
-      return;
+        setError("We are looking for startups with at least $50,000 annual revenue.");
+        return;
     }
 
     setError("");
     console.log("Form submitted:", form);
     setIsOpen(false);
-  };
+    };
 
   return (
     <>
