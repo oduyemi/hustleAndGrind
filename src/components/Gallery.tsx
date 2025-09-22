@@ -54,7 +54,7 @@ export default function Gallery() {
         {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
-            Gallery{" "}
+            Gallery:{" "}
             <span className="bg-gradient-to-r from-blue-500 to-fuchsia-500 bg-clip-text text-transparent">
               Previous
             </span>{" "}
