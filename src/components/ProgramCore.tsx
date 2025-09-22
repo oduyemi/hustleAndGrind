@@ -10,7 +10,7 @@ export const Core: React.FC = () => {
       icon: Rocket,
       title: "Accelerated Growth",
       description:
-        "A 4-week immersive sprint to sharpen your business model and growth strategy.",
+        "A 2-week immersive sprint to sharpen your business model and growth strategy.",
     },
     {
       icon: Lightbulb,
