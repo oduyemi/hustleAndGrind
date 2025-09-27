@@ -1,5 +1,6 @@
 import "./globals.css";
 import ClientSideLayout from "@/components/ClientSideLayout";
+import { ThemeProvider } from "next-themes";
 
 export const metadata = {
   title: "Hustle & Grind Accelerator",
@@ -7,27 +8,17 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  // Inline script runs before React to set initial theme class on <html>
-  const setThemeScript = `
-    (function() {
-      try {
-        var t = localStorage.getItem('theme');
-        if (!t) {
-          t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
-        }
-        if (t === 'dark') document.documentElement.classList.add('dark-theme');
-        else document.documentElement.classList.remove('dark-theme');
-      } catch (e) {}
-    })();
-  `;
-
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: setThemeScript }} />
-      </head>
+      <head />
       <body className="m-0 p-0 min-h-screen flex flex-col">
-        <ClientSideLayout>{children}</ClientSideLayout>
+        <ThemeProvider
+          attribute="class"   // adds "light" or "dark" class to <html>
+          defaultTheme="system"
+          enableSystem
+        >
+          <ClientSideLayout>{children}</ClientSideLayout>
+        </ThemeProvider>
       </body>
     </html>
   );

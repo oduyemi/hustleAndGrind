@@ -3,11 +3,7 @@ import { ThemeProvider } from "next-themes";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <ThemeProvider
-      attribute="class"       // puts "dark" or "light" on <html>
-      defaultTheme="system"   // 👈 better than "light"
-      enableSystem={true}
-    >
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
       {children}
     </ThemeProvider>
   );

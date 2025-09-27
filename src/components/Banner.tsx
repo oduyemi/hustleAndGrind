@@ -32,14 +32,13 @@ const slides = [
 
 export const Banner: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  // eslint-disable-next-line
   const [animating, setAnimating] = useState(false);
-
-  const { theme, systemTheme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
+
     const interval = setInterval(() => {
       setAnimating(true);
       setTimeout(() => {
@@ -47,21 +46,21 @@ export const Banner: React.FC = () => {
         setAnimating(false);
       }, 400);
     }, 7000);
+
     return () => clearInterval(interval);
   }, []);
 
-  if (!mounted) return null;
+  if (!mounted) return null; // ✅ prevents SSR mismatch
 
-  const currentTheme = theme === "system" ? systemTheme : theme;
   const heroSrc =
-    currentTheme === "dark" ? "/images/hero1_white.png" : "/images/hero1.png";
+    resolvedTheme === "dark"
+      ? "/images/hero1.png"
+      : "/images/hero1_white.png";
 
   const slide = slides[currentSlide];
 
   return (
-    <section
-      className="relative w-full px-6 md:px-12 lg:px-20 py-24 sm:py-32 md:py-40 overflow-hidden isolate bg-[var(--bg)] text-[var(--text)]"
-    >
+    <section className="relative w-full px-6 md:px-12 lg:px-20 py-24 sm:py-32 md:py-40 overflow-hidden isolate bg-[var(--bg)] text-[var(--text)]">
       {/* Background glows + pattern */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 bg-[url('/images/grid-pattern.jpg')] bg-repeat opacity-5 mix-blend-overlay" />
@@ -200,11 +199,12 @@ export const Banner: React.FC = () => {
         >
           <div className="relative">
             <Image
+              key={heroSrc} // forces re-render when src changes
               src={heroSrc}
               alt="Hero"
               width={600}
               height={400}
-              className="w-full h-auto drop-shadow-2xl grayscale contrast-125 transition duration-700 group-hover:scale-[1.02] group-hover:contrast-150 rounded-2xl relative z-10"
+              className="transition-opacity duration-500 opacity-100"
               priority
             />
             <svg

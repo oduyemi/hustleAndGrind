@@ -1,35 +1,9 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 import { Sun, Moon, Laptop } from "lucide-react";
 
-type Theme = "light" | "dark" | "system";
-
-function getInitial(): Theme {
-  if (typeof window === "undefined") return "light";
-  const stored = localStorage.getItem("theme") as Theme | null;
-  if (stored) return stored;
-  return "system";
-}
-
 export default function ThemeSwitcher() {
-  const [theme, setTheme] = useState<Theme>(() => getInitial());
-
-  useEffect(() => {
-    if (theme === "system") {
-      const mq = window.matchMedia("(prefers-color-scheme: dark)");
-      const apply = (e?: MediaQueryListEvent) => {
-        const isDark = e ? e.matches : mq.matches;
-        document.documentElement.classList.toggle("dark-theme", isDark);
-      };
-      apply();
-      mq.addEventListener("change", apply);
-      localStorage.removeItem("theme");
-      return () => mq.removeEventListener("change", apply);
-    } else {
-      document.documentElement.classList.toggle("dark-theme", theme === "dark");
-      localStorage.setItem("theme", theme);
-    }
-  }, [theme]);
+  const { theme, setTheme, resolvedTheme } = useTheme();
 
   const baseBtn =
     "p-2 rounded-full transition-all duration-200 shadow-md hover:scale-110 focus:outline-none";
