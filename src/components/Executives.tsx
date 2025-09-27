@@ -9,7 +9,7 @@ const logos = [
   "/images/brands/paga.png",
   "/images/brands/breega.png",
   "/images/brands/seamlesshr.png",
-  "/images/brands/nomba.png",
+  "/images/brands/nomba.png", // will be swapped in dark mode
   "/images/brands/mastercard.png",
   "/images/brands/moniepoint.png",
 ];
@@ -39,12 +39,25 @@ export default function Executives() {
                 key={idx}
                 className="flex-shrink-0 w-40 h-20 relative grayscale-0 hover:grayscale transition"
               >
-                <Image
-                  src={logo}
-                  alt={`brand-${idx}`}
-                  fill
-                  className="object-contain"
-                />
+                {/* Handle Nomba separately for dark mode */}
+                {logo.includes("nomba") ? (
+                  <>
+                    <Image
+                      src="/images/brands/nomba.png"
+                      alt="Nomba"
+                      fill
+                      className="object-contain block dark:hidden"
+                    />
+                    <Image
+                      src="/images/brands/nomba_white.png"
+                      alt="Nomba (White)"
+                      fill
+                      className="object-contain hidden dark:block"
+                    />
+                  </>
+                ) : (
+                  <Image src={logo} alt={`brand-${idx}`} fill className="object-contain" />
+                )}
               </div>
             ))}
           </motion.div>

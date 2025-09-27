@@ -54,7 +54,7 @@ export const Banner: React.FC = () => {
 
   const currentTheme = theme === "system" ? systemTheme : theme;
   const heroSrc =
-    currentTheme === "dark" ? "/images/hero1.png" : "/images/hero1_white.png";
+    currentTheme === "dark" ? "/images/hero1_white.png" : "/images/hero1.png";
 
   const slide = slides[currentSlide];
 
