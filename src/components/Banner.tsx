@@ -32,6 +32,7 @@ const slides = [
 
 export const Banner: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [animating, setAnimating] = useState(false);
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);

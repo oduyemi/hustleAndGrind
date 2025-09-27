@@ -3,6 +3,7 @@ import { useTheme } from "next-themes";
 import { Sun, Moon, Laptop } from "lucide-react";
 
 export default function ThemeSwitcher() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { theme, setTheme, resolvedTheme } = useTheme();
 
   const baseBtn =
