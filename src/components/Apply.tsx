@@ -3,6 +3,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import "animate.css";
 import ApplicationFormDialog from "./ApplicationFormDialog";
+import { Button } from "./ui/button";
+
 
 export const Application: React.FC = () => {
   return (
@@ -56,7 +58,17 @@ export const Application: React.FC = () => {
 
           {/* Application Dialog */}
           <div className="w-full mx-auto rounded-xl overflow-hidden">
-            <ApplicationFormDialog />
+            <ApplicationFormDialog>
+              <Button
+                  style={{
+                    background: "var(--text)",
+                    color: "var(--bg)",
+                  }}
+                  className="rounded-full px-8 py-4 font-semibold tracking-wide hover:scale-105 transition-all duration-300 group relative overflow-hidden"
+                >
+                  <span className="relative z-10">Apply Now →</span>
+                </Button>
+            </ApplicationFormDialog>
           </div>
         </motion.div>
       </section>

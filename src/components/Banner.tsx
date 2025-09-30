@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Check, Clock, TrendingUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import ApplicationFormDialog from "./ApplicationFormDialog";
 
 const slides = [
   {
@@ -177,15 +178,17 @@ export const Banner: React.FC = () => {
               viewport={{ once: true }}
               className="mt-10"
             >
-              <Button
-                style={{
-                  background: "var(--text)",
-                  color: "var(--bg)",
-                }}
-                className="rounded-full px-8 py-4 font-semibold tracking-wide hover:scale-105 transition-all duration-300 group relative overflow-hidden"
-              >
-                <span className="relative z-10">Apply Now →</span>
-              </Button>
+              <ApplicationFormDialog>
+                <Button
+                  style={{
+                    background: "var(--text)",
+                    color: "var(--bg)",
+                  }}
+                  className="rounded-full px-8 py-4 font-semibold tracking-wide hover:scale-105 transition-all duration-300 group relative overflow-hidden"
+                >
+                  <span className="relative z-10">Apply Now →</span>
+                </Button>
+              </ApplicationFormDialog>
             </motion.div>
           )}
         </div>

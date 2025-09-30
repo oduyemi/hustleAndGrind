@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import ApplicationFormDialog from "./ApplicationFormDialog";
 
 export const Selection: React.FC = () => {
   const criteria = [
@@ -29,10 +30,11 @@ export const Selection: React.FC = () => {
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="relative max-w-4xl mx-auto p-12 sm:p-16 bg-white/90 border border-black/10 dark:border-white/20 rounded-3xl shadow-sm backdrop-blur-xl flex flex-col gap-10" style={{ background: "var(--bg)", color: "var(--text)" }}
+        className="relative max-w-4xl mx-auto p-12 sm:p-16 bg-white/90 border border-black/10 dark:border-white/20 rounded-3xl shadow-sm backdrop-blur-xl flex flex-col gap-10"
+        style={{ background: "var(--bg)", color: "var(--text)" }}
       >
         {/* Title */}
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-center lg:text-left text-transparent bg-clip-text bg-gradient-to-r from-black via-gray-800 to-gray-900 dark:from-white dark:via-\-200 dark:to-zinc-100" style={{ color: "var(--text)" }}>
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-center lg:text-left text-transparent bg-clip-text bg-gradient-to-r from-black via-gray-800 to-gray-900 dark:from-white dark:via-gray-200 dark:to-zinc-100" style={{ color: "var(--text)" }}>
           Selection Criteria
         </h2>
 
@@ -62,16 +64,18 @@ export const Selection: React.FC = () => {
           Wisdom is like a baobab tree; no one individual can embrace it. <br /> — Ghanaian Proverb
         </p>
 
-        {/* CTA button */}
+        {/* CTA button with ApplicationFormDialog */}
         <motion.div
           className="mt-6 flex justify-center lg:justify-start"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
         >
-          <button className="px-10 py-4 font-bold rounded-full bg-black text-white dark:bg-white dark:text-black shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300">
-            Apply Now →
-          </button>
+          <ApplicationFormDialog>
+            <button className="px-10 py-4 font-bold rounded-full bg-black text-white dark:bg-white dark:text-black shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300">
+              Apply Now →
+            </button>
+          </ApplicationFormDialog>
         </motion.div>
       </motion.div>
     </section>
