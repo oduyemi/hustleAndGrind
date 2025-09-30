@@ -228,7 +228,7 @@ export default function ApplicationFormDialog({ children }: ApplicationFormDialo
                       <button
                         type="submit"
                         disabled={status === "submitting"}
-                        className="px-6 py-2 rounded-lg bg-[var(--primary)] text-white hover:opacity-90 shadow-md transition disabled:opacity-50"
+                        className="px-6 py-2 rounded-lg bg-[var(--application-border)] text-white hover:opacity-90 shadow-md transition disabled:opacity-50" style={{ color: "var(--bg)" }}
                       >
                         {status === "submitting" ? "Submitting..." : "Submit Application"}
                       </button>
