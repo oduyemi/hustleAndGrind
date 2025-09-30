@@ -6,42 +6,19 @@ import { X } from "lucide-react";
 
 export default function ApplicationFormDialog() {
   const [isOpen, setIsOpen] = useState(false);
-  const [form, setForm] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    companyName: "",
-    website: "",
-    industry: "",
-    annualRevenue: "",
-    teamSize: "",
-    pitchDeck: null,
-    reason: "",
-  });
   const [error, setError] = useState("");
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-    ) => {
-    const { name, value, files } = e.target as HTMLInputElement;
-    setForm((prev) => ({
-        ...prev,
-        [name]: files ? files[0] : value,
-    }));
-    };
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const formData = new FormData(e.currentTarget);
+    const annualRevenue = parseInt(formData.get("annualRevenue") as string || "0");
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    if (parseInt(form.annualRevenue || "0") < 50000) {
-        setError("We are looking for startups with at least $50,000 annual revenue.");
-        return;
+    if (annualRevenue < 50000) {
+      e.preventDefault();
+      setError("We are looking for startups with at least $50,000 annual revenue.");
+      return;
     }
-
     setError("");
-    console.log("Form submitted:", form);
-    setIsOpen(false);
-    };
+  };
 
   return (
     <>
@@ -65,9 +42,7 @@ export default function ApplicationFormDialog() {
             transition={{ duration: 0.3 }}
             className="w-full max-w-2xl"
           >
-            <Dialog.Panel
-              className="application application-item mx-auto rounded-2xl p-6 md:p-8 shadow-2xl relative"
-            >
+            <Dialog.Panel className="application application-item mx-auto rounded-2xl p-6 md:p-8 shadow-2xl relative">
               {/* Close button */}
               <button
                 onClick={() => setIsOpen(false)}
@@ -80,7 +55,13 @@ export default function ApplicationFormDialog() {
                 Hustle & Grind Application
               </Dialog.Title>
 
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form
+                action="https://formspree.io/f/mwprorod"
+                method="POST"
+                encType="multipart/form-data"
+                onSubmit={handleSubmit}
+                className="space-y-5"
+              >
                 {/* Founder Info */}
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
@@ -88,7 +69,6 @@ export default function ApplicationFormDialog() {
                     <input
                       type="text"
                       name="fullName"
-                      onChange={handleChange}
                       className="w-full p-3 rounded-lg border border-[var(--application-border)] bg-[var(--application-bg)] focus:ring-2 focus:ring-[var(--primary)] outline-none"
                       required
                     />
@@ -98,7 +78,6 @@ export default function ApplicationFormDialog() {
                     <input
                       type="email"
                       name="email"
-                      onChange={handleChange}
                       className="w-full p-3 rounded-lg border border-[var(--application-border)] bg-[var(--application-bg)] focus:ring-2 focus:ring-[var(--primary)] outline-none"
                       required
                     />
@@ -111,7 +90,6 @@ export default function ApplicationFormDialog() {
                     <input
                       type="text"
                       name="phone"
-                      onChange={handleChange}
                       className="w-full p-3 rounded-lg border border-[var(--application-border)] bg-[var(--application-bg)] focus:ring-2 focus:ring-[var(--primary)] outline-none"
                     />
                   </div>
@@ -120,7 +98,6 @@ export default function ApplicationFormDialog() {
                     <input
                       type="text"
                       name="companyName"
-                      onChange={handleChange}
                       className="w-full p-3 rounded-lg border border-[var(--application-border)] bg-[var(--application-bg)] focus:ring-2 focus:ring-[var(--primary)] outline-none"
                       required
                     />
@@ -134,7 +111,6 @@ export default function ApplicationFormDialog() {
                     <input
                       type="url"
                       name="website"
-                      onChange={handleChange}
                       className="w-full p-3 rounded-lg border border-[var(--application-border)] bg-[var(--application-bg)] focus:ring-2 focus:ring-[var(--primary)] outline-none"
                       required
                     />
@@ -143,7 +119,6 @@ export default function ApplicationFormDialog() {
                     <label className="block text-sm font-medium mb-1">Industry</label>
                     <select
                       name="industry"
-                      onChange={handleChange}
                       className="w-full p-3 rounded-lg border border-[var(--application-border)] bg-[var(--application-bg)] focus:ring-2 focus:ring-[var(--primary)] outline-none"
                     >
                       <option value="">Select</option>
@@ -164,7 +139,6 @@ export default function ApplicationFormDialog() {
                     <input
                       type="number"
                       name="annualRevenue"
-                      onChange={handleChange}
                       className="w-full p-3 rounded-lg border border-[var(--application-border)] bg-[var(--application-bg)] focus:ring-2 focus:ring-[var(--primary)] outline-none"
                       required
                     />
@@ -174,7 +148,6 @@ export default function ApplicationFormDialog() {
                     <input
                       type="number"
                       name="teamSize"
-                      onChange={handleChange}
                       className="w-full p-3 rounded-lg border border-[var(--application-border)] bg-[var(--application-bg)] focus:ring-2 focus:ring-[var(--primary)] outline-none"
                     />
                   </div>
@@ -186,7 +159,6 @@ export default function ApplicationFormDialog() {
                   <textarea
                     name="reason"
                     rows={3}
-                    onChange={handleChange}
                     className="w-full p-3 rounded-lg border border-[var(--application-border)] bg-[var(--application-bg)] focus:ring-2 focus:ring-[var(--primary)] outline-none"
                   />
                 </div>
@@ -198,7 +170,6 @@ export default function ApplicationFormDialog() {
                     type="file"
                     name="pitchDeck"
                     accept="application/pdf"
-                    onChange={handleChange}
                     className="w-full p-3 rounded-lg border border-[var(--application-border)] bg-[var(--application-bg)]"
                   />
                 </div>
