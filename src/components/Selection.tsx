@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import ApplicationFormDialog from "./ApplicationFormDialog";
+import { Button } from "./ui/button";
 
 export const Selection: React.FC = () => {
   const criteria = [
@@ -72,9 +73,15 @@ export const Selection: React.FC = () => {
           transition={{ delay: 0.3, duration: 0.6 }}
         >
           <ApplicationFormDialog>
-            <button className="px-10 py-4 font-bold rounded-full bg-black text-white dark:bg-white dark:text-black shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300">
+            <Button 
+              style={{
+                background: "var(--text)",
+                color: "var(--bg)",
+              }}
+              className="rounded-full px-8 py-4 font-semibold tracking-wide hover:scale-105 transition-all duration-300 group relative overflow-hidden"
+            >
               Apply Now →
-            </button>
+            </Button>
           </ApplicationFormDialog>
         </motion.div>
       </motion.div>
