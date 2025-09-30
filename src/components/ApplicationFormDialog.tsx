@@ -164,7 +164,7 @@ export default function ApplicationFormDialog() {
                 </div>
 
                 {/* Upload Pitch Deck */}
-                <div>
+                {/* <div>
                   <label className="block text-sm font-medium mb-1">Pitch Deck (PDF)</label>
                   <input
                     type="file"
@@ -172,7 +172,7 @@ export default function ApplicationFormDialog() {
                     accept="application/pdf"
                     className="w-full p-3 rounded-lg border border-[var(--application-border)] bg-[var(--application-bg)]"
                   />
-                </div>
+                </div> */}
 
                 {/* Error */}
                 {error && <p className="text-red-500 text-sm font-medium">{error}</p>}
