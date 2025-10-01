@@ -33,7 +33,7 @@ export const VideoEmbed: React.FC = () => {
         >
           <iframe
             className="w-full h-full"
-            src="https://www.youtube.com/embed/1AwnwEOWdi4?si=V75KU6xKBPcjF4ro"
+            src="https://www.youtube.com/embed/1AwnwEOWdi4?rel=0&si=V75KU6xKBPcjF4ro"
             title="Hustle & Grind Accelerator Overview"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
