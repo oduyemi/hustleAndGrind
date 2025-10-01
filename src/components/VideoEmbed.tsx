@@ -32,8 +32,8 @@ export const VideoEmbed: React.FC = () => {
           className="aspect-video w-full max-w-4xl mx-auto overflow-hidden rounded-2xl shadow-xl border border-white/10"
         >
           <iframe
-            className="w-full h-full"
-            src="https://www.youtube.com/embed/1AwnwEOWdi4?rel=0&si=V75KU6xKBPcjF4ro"
+            className="w-full h-full rounded-lg"
+            src="https://www.youtube.com/embed/1AwnwEOWdi4?rel=0&modestbranding=1&controls=1&showinfo=0&iv_load_policy=3"
             title="Hustle & Grind Accelerator Overview"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
